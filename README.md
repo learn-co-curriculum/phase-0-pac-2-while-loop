@@ -32,7 +32,7 @@ end
 ```
 
 As long as the condition expression is `true` (or truthy), the code inside the
-`do...end` block will run. Keep in  mind, as an _expression_ the condition
+`do...end` block will run. Keep in mind, as an _expression_ the condition
 expression can be quite rich, using `&&`, `||`, `()`, etc.
 
 ## Write an Infinite Loop
@@ -46,6 +46,17 @@ while true do
 end
 ```
 
+With output:
+
+```text
+say this forever...
+say this forever...
+say this forever...
+say this forever...
+say this forever...
+...
+```
+
 Remember truthy? Here again:
 
 ```ruby
@@ -56,8 +67,11 @@ end
 
 ## Use Control-C to Break an Infinitely Looping Program
 
-If you ever accidentally have a program run inside a loop (maybe you made an
-error?), make sure you're in the terminal spot of the In-Browser IDE and type
+If you ever run a program and it starts printing over and over without end
+**or** it never seems to finish **and** you're writing some looping code, you
+probably made a mistake and your code is stuck in an infinite loop.
+
+Make sure you're in the terminal spot of the In-Browser IDE, and type
 Control-C. That's an old-school UNIX key-combination that means INTERRUPT.
 Interrupting a running program will break it out of an infinite loop.
 
@@ -96,13 +110,26 @@ would _always_ be `true` and, therefore, we'd have an infinite loop.
 ## Terminate a `while...do...end` Loop With `break` Statement
 
 Programmers consider it most "expressive" to put the _condition expression_
-next to the while. Programmers are used to looking next to `while` to find out
-why a loop exited. **However**, we _can_ break out of a loop by using the
-`break` statement.
+next to the `while`. Programmers are used to looking to the right of the
+`while` to find out why a loop exited. They understand this "why" by
+understanding the _condition expression_. **However**, we _can_ break out of a
+loop by using the `break` statement.
 
-> **LEARNING NOTE**: You'll also notice we're using a statement modifier and a
-> equality-testing (Boolean) expression.  You might be noticing that all of our
-> lessons are starting to line up.
+The `while` should cover the general case including when to repeat **and** when
+to finish. A `break` is for priority or anomalous interruption. For example,
+most TV or radio stations have a loop of programming that they run every day.
+But in the case of a special alert bulletin (dramatic weather, emergency, etc.)
+they can "break" out of their regularly loop. The `break` statement is like
+this.
+
+> **LEARNING NOTE**: In the code below we're using a statement modifier **and**
+> an equality-testing (Boolean) expression.  All of our lessons are starting to
+> work together!
+
+In the code below, our _general_ intention is to move through the numbers `0`
+through `9`. That's what the `while`'s _condition expression_ communicates.
+However, there's a little bit of dynamite _inside_ the code. If we _just so
+happen_ to hit `magic_exit_number` we break out of the loop.
 
 ```ruby
 magic_exit_number = 7
@@ -114,9 +141,12 @@ while count < 10 do
 end
 ```
 
+Or, imagine you had a random number generator between `0` to `9` (which you'll
+learn to make soon). You could assign that random number to `magic_exit_number`
+and your repetition would vary between runs of the same program.
+
 Again, another way of writing this that keeps the _condition expression_ all in
 one place would be:
-
 
 ```ruby
 magic_exit_number = 7
