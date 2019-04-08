@@ -119,7 +119,7 @@ The `while` should cover the general case including when to repeat **and** when
 to finish. A `break` is for priority or anomalous interruption. For example,
 most TV or radio stations have a loop of programming that they run every day.
 But in the case of a special alert bulletin (dramatic weather, emergency, etc.)
-they can "break" out of their regularly loop. The `break` statement is like
+they can "break" out of their regular loop. The `break` statement is like
 this.
 
 > **LEARNING NOTE**: In the code below we're using a statement modifier **and**
