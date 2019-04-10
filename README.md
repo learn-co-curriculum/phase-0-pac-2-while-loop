@@ -57,11 +57,19 @@ say this forever...
 ...
 ```
 
-Remember truthy? Here again:
+Remember truthy? Here it is again:
 
 ```ruby
 while -1 do # -1 is truthy....
   puts "say this forever..."
+end
+```
+
+Likewise, falsey is important as well:
+
+```ruby
+while nil do
+  puts "I will never run"
 end
 ```
 
@@ -83,7 +91,7 @@ cross, that's captured in the _condition expression_ that tells the
 **default sequence** which will resume after the `end`.
 
 So, somehow we need to create an expression that's true when the `while` begins
-(so that the code in the `do...end` runs), but which will eventually become
+(so that the code in the `do...end` runs), but that eventually becomes
 false.
 
 Here's a simple example:
@@ -106,6 +114,37 @@ I am the 2, I love to count!
 
 Let's say we forgot the line `count = count + 1` our _condition expression_
 would _always_ be `true` and, therefore, we'd have an infinite loop.
+
+## Introduce Mutating Assignment Operators
+
+Let's look back at that previous example to notice how we're moving from a 
+true or truthy statement to a false or falsey statement. With each loop, the
+following expression is evaluated:
+
+```ruby
+count = count + 1
+```
+
+which slowly moves `count` to a place where it is `>=` 3, thus ending the loop.
+
+But writing `count = count + 1` is a bit long-winded (although very clear, sometimes
+a few extra keystrokes can save you headaches with debugging if you aren't too
+clever about saving a few keystrokes). This pattern of making a change to the thing
+that you want to assign to update or "mutate" is very common. Ruby has a shorthand
+for this. It's like a contraction in conversation: very few English speakers say
+"can not," "have not," or "would not" **all** the time. You're likely to hear them
+use _contractions_ (from the Latin: "pulling together") like "can't," "haven't,"
+and "wouldn't." So we can link addition and assignment, like above, with:
+
+```ruby
+count += 1 # take the value of count, add one to it and then re-assign that result to count
+```
+
+Unsurprisingly `-=` does the reverse of `+=`: it does a reduction of the variable's
+value and re-assigns it to the variable. Multiplication and division are also supported
+`*=` and `/-`. There's even modulo-assignment with `%=`, should you need it!
+
+Try out using these to shorten loops.
 
 ## Terminate a `while...do...end` Loop With `break` Statement
 
