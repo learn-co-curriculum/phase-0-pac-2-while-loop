@@ -6,6 +6,7 @@
 * Write an Infinite Loop
 * Use Control-C to Break an Infinitely Looping Program
 * Terminate a `while...do...end` Loop Naturally
+* Use Mutating Assignment Operators (+=, -=, *=, /=)
 * Terminate a `while...do...end` Loop With `break` Statement
 
 ## Introduction
@@ -115,7 +116,7 @@ I am the 2, I love to count!
 Let's say we forgot the line `count = count + 1` our _condition expression_
 would _always_ be `true` and, therefore, we'd have an infinite loop.
 
-## Introduce Mutating Assignment Operators
+## Use Mutating Assignment Operators (+=, -=, *=, /=)
 
 Let's look back at that previous example to notice how we're moving from a 
 true or truthy statement to a false or falsey statement. With each loop, the
