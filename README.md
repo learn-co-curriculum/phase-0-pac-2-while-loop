@@ -143,7 +143,7 @@ count += 1 # take the value of count, add one to it and then re-assign that resu
 
 Unsurprisingly `-=` does the reverse of `+=`: it does a reduction of the variable's
 value and re-assigns it to the variable. Multiplication and division are also supported
-`*=` and `/-`. There's even modulo-assignment with `%=`, should you need it!
+`*=` and `/=`. There's even modulo-assignment with `%=`, should you need it!
 
 Try out using these to shorten loops.
 
