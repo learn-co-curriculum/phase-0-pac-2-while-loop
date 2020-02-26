@@ -12,7 +12,7 @@
 ## Introduction
 
 The final piece of using _statements_ to control the flow of Ruby execution is
-**repetition**. While the **default sequence** requires Ruby to execute top-down,
+_repetition_. While the **default sequence** requires Ruby to execute top-down,
 left to right, we've seen that we can skip chunks of code using the _selection_
 statement `if...else...end`. In some ways the reverse of _selection_ is
 _repetition_: "Don't move on," we tell Ruby, "do something else until I say
@@ -118,7 +118,7 @@ would _always_ be `true` and, therefore, we'd have an infinite loop.
 
 ## Use Mutating Assignment Operators (+=, -=, *=, /=)
 
-Let's look back at that previous example to notice how we're moving from a
+Let's look back at that previous example to notice how we're moving from a 
 true or truthy statement to a false or falsey statement. With each loop, the
 following expression is evaluated:
 
@@ -126,8 +126,7 @@ following expression is evaluated:
 count = count + 1
 ```
 
-which slowly moves `count` to a place where it is no longer less than 3, thus
-ending the loop.
+which slowly moves `count` to a place where it is `>=` 3, thus ending the loop.
 
 But writing `count = count + 1` is a bit long-winded (although very clear, sometimes
 a few extra keystrokes can save you headaches with debugging if you aren't too
@@ -197,80 +196,6 @@ while count < 10 && count != magic_exit_number do
   count = count + 1
 end
 ```
-
-## Your Challenge
-
-Build a `while...do...end` loop that counts from `10` down to `1`, outputting
-the current value during each loop. After `1` is displayed, output
-`Happy New Year!`. When completed, your code should produce the following:
-
-```sh
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
-Happy New Year!
-```
-
-Code your solution in `lib/count_down.rb`. Use the earlier examples to put
-together a solution and run `learn` to see your progress.
-
-## Solving this Lab
-
-This challenge is a slight modification of the examples we've seen. Instead of
-counting up in a loop, we need to count down. First, we'll need to set up the loop:
-
-```ruby
-while (condition) do
-
-end
-```
-
-Then we will need to set up the loop condition. In our case, we want to output
-from `10` down to `1`, so it makes sense here to create a variable, assign it to
-`10`, then set the loop to run as long as the variable is greater than or equal
-to `1`. In the loop, we will need to subtract `1` from the variable so that the
-loop eventually ends.
-
-```ruby
-count = 10
-while count >= 1 do
-
-  count -= 1
-end
-```
-
-We've got the loop designed. Now we just need to add the outputs. First, we want
-to output the current value of `count` on each loop:
-
-```ruby
-count = 10
-while count >= 1 do
-  puts count
-  count -= 1
-end
-```
-
-Then, since we only need to announce `Happy New Year!` at the end, we can place it
-after the loop:
-
-```ruby
-count = 10
-while count >= 1 do
-  puts count
-  count -= 1
-end
-puts "Happy New Year!"
-```
-
-Run the tests to confirm your solution then run `learn submit` to submit your
-work.
 
 ## Conclusion
 
