@@ -12,12 +12,12 @@
 ## Introduction
 
 The final piece of using _statements_ to control the flow of Ruby execution is
-**repetition**. While the **default sequence** requires Ruby to execute top-down,
-left to right, we've seen that we can skip chunks of code using the _selection_
-statement `if...else...end`. In some ways the reverse of _selection_ is
-_repetition_: "Don't move on," we tell Ruby, "do something else until I say
-it's OK to move on." The most fundamental _repetition_ construct, present in
-pretty much every programming language, is the `while...do...end` loop.
+**repetition**. While the **default sequence** requires Ruby to execute
+top-down, left to right, we've seen that we can skip chunks of code using the
+_selection_ statement `if...else...end`. In some ways the reverse of _selection_
+is _repetition_: "Don't move on," we tell Ruby. "Instead do something else until
+I say it's OK to move on." The most fundamental _repetition_ construct, present
+in pretty much every programming language, is the `while...do...end` loop.
 
 Ruby features other _repetition_ statements, but, for the most part, they're
 simplifications on the `while...do...end` statement.
@@ -87,9 +87,8 @@ Interrupting a running program will break it out of an infinite loop.
 ## Terminate a `while...do...end` Loop Naturally
 
 Most loops aren't meant to run infinitely. There's some condition that they
-cross, that's captured in the _condition expression_ that tells the
-`while...do...end` that it's time is over and it's time to return to the
-**default sequence** which will resume after the `end`.
+cross, captured in the _condition expression_, that tells the `while...do...end`
+that its time is over and it's time to return to the **default sequence**. Once that happens, Ruby continues executing the code after the while loop's `end`.
 
 So, somehow we need to create an expression that's true when the `while` begins
 (so that the code in the `do...end` runs), but that eventually becomes
@@ -105,7 +104,10 @@ while count < 3 do # A Boolean expression using the bit of data
 end
 ```
 
-This produces:
+In the line `count = count + 1`, we are _assigning_ a new value to the `count`
+variable, where the new value is the current value plus 1.
+
+The code above produces:
 
 ```text
 I am the 0, I love to count!
@@ -113,14 +115,14 @@ I am the 1, I love to count!
 I am the 2, I love to count!
 ```
 
-Let's say we forgot the line `count = count + 1` our _condition expression_
-would _always_ be `true` and, therefore, we'd have an infinite loop.
+Let's say we forgot the line `count = count + 1`. Our _condition expression_
+would then _always_ be `true` and we'd have an infinite loop.
 
 ## Use Mutating Assignment Operators (+=, -=, *=, /=)
 
 Let's look back at that previous example to notice how we're moving from a
-true or truthy statement to a false or falsey statement. With each loop, the
-following expression is evaluated:
+true or truthy statement to a false or falsey statement. Within each loop, the
+following code is executed:
 
 ```ruby
 count = count + 1
@@ -129,22 +131,24 @@ count = count + 1
 which slowly moves `count` to a place where it is no longer less than 3, thus
 ending the loop.
 
-But writing `count = count + 1` is a bit long-winded (although very clear, sometimes
-a few extra keystrokes can save you headaches with debugging if you aren't too
-clever about saving a few keystrokes). This pattern of making a change to the thing
-that you want to assign to update or "mutate" is very common. Ruby has a shorthand
-for this. It's like a contraction in conversation: very few English speakers say
-"can not," "have not," or "would not" **all** the time. You're likely to hear them
-use _contractions_ (from the Latin: "pulling together") like "can't," "haven't,"
-and "wouldn't." So we can link addition and assignment, like above, with:
+But writing `count = count + 1` is a bit long-winded (although very explicit;
+sometimes a few extra keystrokes can save you headaches with debugging,
+especially when you're first learning to code). This pattern of "incrementing" a
+variable is very common, so Ruby includes a shorthand for it. It's like a
+contraction in conversation: very few English speakers say "can not," "have
+not," or "would not" **all** the time. You're likely to hear them use
+_contractions_ (from the Latin: "pulling together") like "can't," "haven't," and
+"wouldn't." In the code below, we are combining (or contracting) the addition
+and assignment with a single operator, `+=`:
 
 ```ruby
 count += 1 # take the value of count, add one to it and then re-assign that result to count
 ```
 
-Unsurprisingly `-=` does the reverse of `+=`: it does a reduction of the variable's
-value and re-assigns it to the variable. Multiplication and division are also supported
-`*=` and `/=`. There's even modulo-assignment with `%=`, should you need it!
+Unsurprisingly `-=` does the reverse of `+=`: it "decrements" the variable's
+value and re-assigns the new value to the variable. Multiplication and division
+are also supported `*=` and `/=`. There's even modulo-assignment with `%=`,
+should you need it!
 
 Try out using these to shorten loops.
 
@@ -163,14 +167,12 @@ But in the case of a special alert bulletin (dramatic weather, emergency, etc.)
 they can "break" out of their regular loop. The `break` statement is like
 this.
 
-> **LEARNING NOTE**: In the code below we're using a statement modifier **and**
-> an equality-testing (Boolean) expression.  All of our lessons are starting to
-> work together!
-
 In the code below, our _general_ intention is to move through the numbers `0`
 through `9`. That's what the `while`'s _condition expression_ communicates.
 However, there's a little bit of dynamite _inside_ the code. If we _just so
-happen_ to hit `magic_exit_number` we break out of the loop.
+happen_ to hit `magic_exit_number`, we break out of the loop early.
+
+> **LEARNING NOTE**: Here we're using a statement modifier **and** an equality-testing (Boolean) expression.  All of our lessons are starting to work together!
 
 ```ruby
 magic_exit_number = 7
@@ -186,8 +188,7 @@ Or, imagine you had a random number generator between `0` to `9` (which you'll
 learn to make soon). You could assign that random number to `magic_exit_number`
 and your repetition would vary between runs of the same program.
 
-Again, another way of writing this that keeps the _condition expression_ all in
-one place would be:
+Note that the `break` isn't necessary in the code above. We can instead refactor to keep the _condition expression_ all in one place:
 
 ```ruby
 magic_exit_number = 7
@@ -274,8 +275,8 @@ work.
 
 ## Conclusion
 
-Congratulations. You know have the `while...do...end` construct as an ally.
+Congratulations. You now have the `while...do...end` construct as an ally.
 With an understanding of _sequence_, _selection_ and now _repetition_ on top of
 your experience with expressions, you can write powerful programs! Be sure and
 experiment with writing your own loops and don't forget, if your application is
-not responding, use Control-C to interrupt the program!
+not responding, you can use Control-C to interrupt the program!
