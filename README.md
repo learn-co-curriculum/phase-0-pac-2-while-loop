@@ -107,18 +107,18 @@ loop.
 So, somehow we need to create an expression that's true when the `while` begins
 (so that the code in the `{}` runs), but that eventually becomes false.
 
-Here's a simple example:
+Here's a simple example that uses a very common approach:
 
 ```js
-let count = 0; // A bit of data defined outside the loop; note that we need to use `let` here
-while (count < 3) { //A Boolean expression using the bit of data
+let count = 0; // Initialize a counter variable; note that we need to use `let` here
+while (count < 3) { //A Boolean expression that uses the counter to decide whether to keep looping
   console.log(`I am the ${count}, I love to count!`); // The work the loop does
-  count = count + 1; // A bit of work that moves the bit of data closer to being false
+  count = count + 1; // Update the counter variable; this keeps track of how many times the loop has executed
 }
 ```
 
-In the line `count = count + 1`, we are _assigning_ a new value to the `count`
-variable, where the new value is equal to its current value plus 1.
+In the last line, `count = count + 1`, we are _assigning_ a new value to the
+`count` variable, where the new value is equal to its current value plus 1.
 
 The code above produces:
 
@@ -128,8 +128,10 @@ I am the 1, I love to count!
 I am the 2, I love to count!
 ```
 
-Let's say we forgot the line `count = count + 1`. Our _condition expression_
-would then _always_ be `true` and we'd have an infinite loop.
+Let's say we forgot the line `count = count + 1`. If our  `count` variable never
+changes, our _condition expression_ would _always_ be `true` and we'd have an
+infinite loop. (Hint: this is a very common mistake, even for experienced
+programmers.)
 
 ## Learn About Operators Used to Increment/Decrement
 
@@ -155,20 +157,20 @@ hear them use _contractions_ (from the Latin: "pulling together") like "can't,"
 assignment with the `addition assignment operator`, `+=`:
 
 ```js
-count += 1 // take the value of count, add one to it and then assign that result to count
+count += 1 // take the value of count, add 1 to it and then assign that result to count
 ```
 
 Unsurprisingly `-=` does the reverse of `+=`: it "decrements" the variable's
 value and re-assigns the new value to the variable. JavaScript has a number of
 other [assignment
 operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Assignment_operators)
-that allow you to use multiplication (`*=`), division (`/=`), and a number of
+that allow you to use multiplication (`*=`), division (`/=`), and a variety of
 other operations.
 
 The assignment operators will work with any _number_. If you want to add 10 or
-3.14 instead of 1, the assignment operators will do that for you. For the
-special (but common) case where you want to add (or subtract) 1, however, there
-is another option: the [increment and decrement
+multiply by 3.14, the assignment operators will do that for you. For the special
+(but common) case where you want to add (or subtract) 1, however, there is
+another option: the [increment and decrement
 operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Increment_and_decrement),
 `++` and `--`. For a case such as the above, where we're using a counter
 variable to keep track of where we are in our loop, the `increment operator` is
@@ -176,7 +178,8 @@ frequently used:
 
 <iframe height="400px" width="100%" src="https://repl.it/@LizBurton/EuphoricNoteworthyMuse?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-Try out the different options and experiment with writing some loops of your own.
+Get comfortable using the different options for incrementation and experiment
+with writing some loops of your own.
 
 ## Use a `do...while` Loop
 
