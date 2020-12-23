@@ -133,6 +133,8 @@ changes, our _condition expression_ would _always_ be `true` and we'd have an
 infinite loop. (Hint: this is a very common mistake, even for experienced
 programmers.)
 
+> You may wonder why we're starting our counter variable at 0 instead of 1. The answer may sound a bit... opaque. It's because, in computer science, arrays are _indexed_ starting with 0 instead of 1. In other words, we need to use the _index_ value of 0 to retrieve the first element from an array. Because loops are frequently used to access elements in arrays, the _convention_ is to start loop counter variables at 0 instead of 1. If this doesn't entirely make sense at this point, don't worry &mdash; it will become clearer when we learn about arrays.
+
 ## Learn About Operators Used to Increment/Decrement
 
 Let's look back at that previous example to notice how we're moving from a
