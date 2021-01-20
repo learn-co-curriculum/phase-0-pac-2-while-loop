@@ -1,4 +1,4 @@
-# Repetition: the `while` Loop
+# Repetition: the while Loop
 
 ## Learning Goals
 
