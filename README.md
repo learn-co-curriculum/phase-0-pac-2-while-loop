@@ -2,17 +2,17 @@
 
 ## Learning Goals
 
-* Define the basic `while` structure
-* Write an infinite loop
-* Use Control-C to break out of an infinite loop
-* Terminate a `while` loop naturally
-* Learn about operators used to increment/decrement
-* Use a `do...while` loop
+- Define the basic `while` structure
+- Write an infinite loop
+- Use Control-C to break out of an infinite loop
+- Terminate a `while` loop naturally
+- Learn about operators used to increment/decrement
+- Use a `do...while` loop
 
 ## Introduction
 
-The final piece of using _statements_ to control the flow of JavaScript execution is
-**repetition**.
+The final piece of using _statements_ to control the flow of JavaScript
+execution is **repetition**.
 
 ![Repetition Graphic](https://curriculum-content.s3.amazonaws.com/phase-0/pac-2-intro/Repetition_thick.png)
 
@@ -59,11 +59,12 @@ say this forever...
 ...
 ```
 
-Note that the condition expression doesn't need to be the literal value `true`
-— any truthy value will have the same effect:
+Note that the condition expression doesn't need to be the literal value `true` —
+any truthy value will have the same effect:
 
 ```js
-while (-1) { // -1 is truthy....
+while (-1) {
+  // -1 is truthy....
   console.log("say this forever...");
 }
 ```
@@ -111,7 +112,8 @@ Here's a simple example that uses a very common approach:
 
 ```js
 let count = 0; // Initialize a counter variable; note that we need to use `let` here
-while (count < 3) { //A Boolean expression that uses the counter to decide whether to keep looping
+while (count < 3) {
+  //A Boolean expression that uses the counter to decide whether to keep looping
   console.log(`I am the ${count}, I love to count!`); // The work the loop does
   count = count + 1; // Update the counter variable; this keeps track of how many times the loop has executed
 }
@@ -128,12 +130,27 @@ I am the 1, I love to count!
 I am the 2, I love to count!
 ```
 
-Let's say we forgot the line `count = count + 1`. If our  `count` variable never
+> You may notice that running this code in repl.it produces a different output,
+> and includes `3` as the last line in the output to the terminal. Why? The
+> reason for this is that in addition to displaying the `console.log`
+> statements, repl.it also shows what the last line of code evaluates to. In
+> this code snippet, the last line of code that is evaluated is
+> `count = count + 1`, which will be `3` by the time our while loop is finished,
+> so that's why the `3` shows up at the end.
+
+Let's say we forgot the line `count = count + 1`. If our `count` variable never
 changes, our _condition expression_ would _always_ be `true` and we'd have an
 infinite loop. (Hint: this is a very common mistake, even for experienced
 programmers.)
 
-> You may wonder why we're starting our counter variable at 0 instead of 1. The answer may sound a bit... opaque. It's because, in computer science, arrays are _indexed_ starting with 0 instead of 1. In other words, we need to use the _index_ value of 0 to retrieve the first element from an array. Because loops are frequently used to access elements in arrays, the _convention_ is to start loop counter variables at 0 instead of 1. If this doesn't entirely make sense at this point, don't worry — it will become clearer when we learn about arrays.
+> You may _also_ wonder why we're starting our counter variable at `0`instead of
+> `1` The answer may sound a bit... opaque. It's because, in computer science,
+> arrays are _indexed_ starting with 0 instead of 1. In other words, we need to
+> use the _index_ value of 0 to retrieve the first element from an array.
+> Because loops are frequently used to access elements in arrays, the
+> _convention_ is to start loop counter variables at 0 instead of 1. If this
+> doesn't entirely make sense at this point, don't worry — it will become
+> clearer when we learn about arrays.
 
 ## Learn About Operators Used to Increment/Decrement
 
@@ -142,7 +159,7 @@ true or truthy statement to a false or falsey statement. Within each loop, the
 following code is executed:
 
 ```js
-count = count + 1
+count = count + 1;
 ```
 
 which slowly moves `count` to a place where it is no longer less than 3, thus
@@ -159,24 +176,25 @@ hear them use _contractions_ (from the Latin: "pulling together") like "can't,"
 assignment with the `addition assignment operator`, `+=`:
 
 ```js
-count += 1 // take the value of count, add 1 to it and then assign that result to count
+// take the value of count, add 1 to it and then assign that result to count
+count += 1;
 ```
 
 Unsurprisingly `-=` does the reverse of `+=`: it "decrements" the variable's
 value and re-assigns the new value to the variable. JavaScript has a number of
-other [assignment
-operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Assignment_operators)
-that allow you to use multiplication (`*=`), division (`/=`), and a variety of
-other operations.
+other [assignment operators][] that allow you to use multiplication (`*=`),
+division (`/=`), and a variety of other operations.
+
+[assignment operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Assignment_operators
 
 The assignment operators will work with any _number_. If you want to add 10 or
 multiply by 3.14, the assignment operators will do that for you. For the special
 (but common) case where you want to add (or subtract) 1, however, there is
-another option: the [increment and decrement
-operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Increment_and_decrement),
-`++` and `--`. For a case such as the above, where we're using a counter
-variable to keep track of where we are in our loop, the `increment operator` is
-frequently used:
+another option: the [increment and decrement operators][], `++` and `--`. For a
+case such as the above, where we're using a counter variable to keep track of
+where we are in our loop, the `increment operator` is frequently used:
+
+[increment and decrement operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Increment_and_decrement
 
 <iframe height="400px" width="100%" src="https://repl.it/@LizBurton/EuphoricNoteworthyMuse?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -191,13 +209,13 @@ code based on a condition or set of conditions. The difference, however, is that
 evaluated until **after** the code block executes the first time:
 
 ```js
-do { 
-  console.log(`I will execute once`); 
+do {
+  console.log(`I will execute once`);
 } while (false);
 ```
 
-The JavaScript engine will enter the loop, execute the console.log, then evalute
-the condition. Because the condition returns `false` the loop will stop
+The JavaScript engine will enter the loop, execute the console.log, then
+evaluate the condition. Because the condition returns `false` the loop will stop
 executing there.
 
 This construction is helpful any time you want to make sure that the loop
