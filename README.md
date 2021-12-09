@@ -91,13 +91,6 @@ that means INTERRUPT. In order for this to work, you first need to make the
 terminal portion of the programming environment (where the results of running
 the code are displayed) the active window by clicking inside it.
 
-Give it a try here:
-
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/QuietNervousRotation?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-Don't forget to click in the terminal (the window on the bottom) before typing
-Control-C!
-
 ## Terminate a `while` Loop Naturally
 
 Most loops aren't meant to run infinitely. There's some condition that they
