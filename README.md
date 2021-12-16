@@ -4,7 +4,7 @@
 
 - Define the basic `while` structure
 - Write an infinite loop
-- Use Control-C to break out of an infinite loop
+- Using Control-C to break out of an infinite loop
 - Terminate a `while` loop naturally
 - Learn about operators used to increment/decrement
 - Use a `do...while` loop
@@ -78,25 +78,18 @@ while (null) {
 }
 ```
 
-## Use Control-C to Break Out of an Infinitely Looping Program
+## Using Control-C to Break Out of an Infinitely Looping Program
 
 When you start writing code and creating loops yourself, you will almost
 certainly inadvertently create infinite loops from time to time. If you try to
 run the code and it either logs over and over without end **or** never seems to
 finish, you're probably stuck in an infinite loop.
 
-In most programming environments (including repl.it), you can break out of an
-infinite loop by typing Control-C. That's an old-school UNIX key combination
-that means INTERRUPT. In order for this to work, you first need to make the
-terminal portion of the programming environment (where the results of running
-the code are displayed) the active window by clicking inside it.
-
-Give it a try here:
-
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/QuietNervousRotation?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-Don't forget to click in the terminal (the window on the bottom) before typing
-Control-C!
+In most programming environments, you can break out of an infinite loop by
+typing Control-C. That's an old-school UNIX key combination that means
+INTERRUPT. In order for this to work, you first need to make the terminal
+portion of the programming environment (where the results of running the
+code are displayed) the active window by clicking inside it.
 
 ## Terminate a `while` Loop Naturally
 
