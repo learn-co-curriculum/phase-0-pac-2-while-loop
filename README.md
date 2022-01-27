@@ -187,12 +187,20 @@ another option: the [increment and decrement operators][], `++` and `--`. For a
 case such as the above, where we're using a counter variable to keep track of
 where we are in our loop, the `increment operator` is frequently used:
 
+```js
+let count = 0; 
+while (count < 3) { 
+  console.log(`I am the ${count}, I love to count!`); 
+  count++; 
+}
+```
+
 [increment and decrement operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Increment_and_decrement
 
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/EuphoricNoteworthyMuse?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+Use the repl console below to get comfortable using the different options for
+incrementation and experiment with writing some loops of your own.
 
-Get comfortable using the different options for incrementation and experiment
-with writing some loops of your own.
+<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/EuphoricNoteworthyMuse?lite=true&outputonly=1" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ## Use a `do...while` Loop
 
