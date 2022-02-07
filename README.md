@@ -6,7 +6,7 @@
 - Write an infinite loop
 - Using Control-C to break out of an infinite loop
 - Terminate a `while` loop naturally
-- Learn about operators used to increment/decrement
+- Use operators to increment/decrement values
 - Use a `do...while` loop
 
 ## Introduction
@@ -123,21 +123,13 @@ I am the 1, I love to count!
 I am the 2, I love to count!
 ```
 
-> You may notice that running this code in repl.it produces a different output,
-> and includes `3` as the last line in the output to the terminal. Why? The
-> reason for this is that in addition to displaying the `console.log`
-> statements, repl.it also shows what the last line of code evaluates to. In
-> this code snippet, the last line of code that is evaluated is
-> `count = count + 1`, which will be `3` by the time our while loop is finished,
-> so that's why the `3` shows up at the end.
-
 Let's say we forgot the line `count = count + 1`. If our `count` variable never
 changes, our _condition expression_ would _always_ be `true` and we'd have an
 infinite loop. (Hint: this is a very common mistake, even for experienced
 programmers.)
 
-> You may _also_ wonder why we're starting our counter variable at `0`instead of
-> `1` The answer may sound a bit... opaque. It's because, in computer science,
+> You may wonder why we're starting our counter variable at `0`instead of `1`
+> The answer may sound a bit... opaque. It's because, in computer science,
 > arrays are _indexed_ starting with 0 instead of 1. In other words, we need to
 > use the _index_ value of 0 to retrieve the first element from an array.
 > Because loops are frequently used to access elements in arrays, the
@@ -189,7 +181,7 @@ where we are in our loop, the `increment operator` is frequently used:
 
 [increment and decrement operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Increment_and_decrement
 
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/EuphoricNoteworthyMuse?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@LizBurton/EuphoricNoteworthyMuse?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Get comfortable using the different options for incrementation and experiment
 with writing some loops of your own.
