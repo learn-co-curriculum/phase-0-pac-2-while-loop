@@ -199,7 +199,7 @@ do {
 } while (false);
 ```
 
-The JavaScript engine will enter the loop, execute the console.log, then
+The JavaScript engine will enter the loop, execute the `console.log()`, then
 evaluate the condition. Because the condition returns `false` the loop will stop
 executing there.
 
