@@ -14,7 +14,7 @@
 The final piece of using _statements_ to control the flow of JavaScript
 execution is **repetition**.
 
-![Repetition Graphic](https://curriculum-content.s3.amazonaws.com/phase-0/pac-2-intro/Repetition_thick.png)
+![Repetition, is deviation from the default execution path. By repeating a sequence of instructions.](https://curriculum-content.s3.amazonaws.com/phase-0/pac-2-intro/Repetition_thick.png)
 
 While the **default sequence** requires JavaScript to execute top-down, left to
 right, we've seen that we can skip chunks of code using _selection_ statements
